@@ -92,7 +92,7 @@ Tabla prestamo
 
 ```
 > mvn exec:java -Dexec.args="movc Matrix 1999-09-09 4"                //Agrega nueva pelicula
-> mvn exec:java -Dexec.args="movc Constantine 2002-05-10 6"           //Agrega nueva pelicula
+> mvn exec:java -Dexec.args="movc Constantine 2002-05-10 5"           //Agrega nueva pelicula
 > mvn exec:java -Dexec.args=”movr”                                    // retorna todos las películas
 > mvn exec:java -Dexec.args="movr 1"                                  // retorna película con ID 1
 > mvn exec:java -Dexec.args="movd 7"                                  // borra película con ID 6
