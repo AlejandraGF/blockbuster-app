@@ -25,4 +25,21 @@ TABLA PRESTAMO
 ![image](https://user-images.githubusercontent.com/74033751/143482626-d53fdb0f-f222-4749-9be0-4be8acea35f1.png)
 
 
+EJECUCIÓN DEL PROGRAMA
+
+CRUD CLIENTE
+ATENCION: TODOS LOS NOMBRES DE DIRECCION NO PUEDEN LLEVAR ESPACIOS
+```
+> mvn exec:java -Dexec.args="cusc Juan Soto 88669977 SanVito"   // Agrega nuevo cliente. Campos requeridos(nombre,apellido,telefono,direccion)
+> mvn exec:java -Dexec.args=”cusr” // retorna todos los clientes
+> mvn exec:java -Dexec.args="cusu 6 Juan Soto 33445533 PerezZeledon" // actualiza el registro en el ID. Campos requeridos(nombre,apellido,telefono,direccion)
+1. La llave primaria NO se puede actualizar
+> mvn exec:java -Dexec.args=”cusr”  // para visualizar los cambios del update
+> mvn exec:java -Dexec.args="cusr 1" // retorna cliente con ID 1
+> mvn exec:java -Dexec.args="cusd 6" // borra cliente con ID 6
+> mvn exec:java -Dexec.args=”cusr”  // para visualizar los cambios del delete
+
+```
+
+
 
