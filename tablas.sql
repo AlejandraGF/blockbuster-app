@@ -22,7 +22,7 @@ CREATE TABLE categoria(
 CREATE TABLE pelicula(
 	codigo int PRIMARY KEY auto_increment,
     titulo varchar(50),
-    lanzamiento timestamp,
+    fecha_lanzamiento timestamp,
     categoria int,
     CONSTRAINT categoria_fk FOREIGN KEY (categoria) REFERENCES categoria(id)
 );
@@ -37,7 +37,7 @@ CREATE TABLE prestamo (
 	CONSTRAINT pelicula_fk FOREIGN KEY (pelicula_codigo) REFERENCES pelicula(codigo)
 );
 
-
+drop procedure if exists insert_prestamo;
 DELIMITER $$
 CREATE PROCEDURE insert_prestamo (in codigo int,in cliente int,in fecha timestamp)
 BEGIN
@@ -47,6 +47,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+drop procedure if exists select_all_prestamos;
 DELIMITER $$
 CREATE PROCEDURE select_all_prestamos ()
 BEGIN
@@ -56,7 +57,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-
+drop procedure if exists select_prestamo;
 DELIMITER $$
 CREATE PROCEDURE select_prestamo (in codigo int)
 BEGIN
@@ -66,6 +67,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+drop procedure if exists delete_prestamo;
 DELIMITER $$
 CREATE PROCEDURE delete_prestamo (in codigo int,in cliente int)
 BEGIN
@@ -75,25 +77,27 @@ BEGIN
 END $$
 DELIMITER ;
 
+drop procedure if exists insert_categoria;
 DELIMITER $$
-CREATE PROCEDURE insert_categoria (in codigo int,in nombre varchar(50))
+CREATE PROCEDURE insert_categoria (in nombre varchar(50))
 BEGIN
 	 START TRANSACTION;
-		insert into categoria(id,nombre_categoria)values(codigo,nombre);
+		insert into categoria(nombre_categoria)values(nombre);
 	COMMIT;
 END $$
 DELIMITER ;
 
+drop procedure if exists select_all_categorias;
 DELIMITER $$
 CREATE PROCEDURE select_all_categorias ()
 BEGIN
 	 START TRANSACTION;
-		SELECT * FROM categoria;
+		SELECT id,nombre_categoria FROM categoria;
 	COMMIT;
 END $$
 DELIMITER ;
 
-
+drop procedure if exists select_categoria;
 DELIMITER $$
 CREATE PROCEDURE select_categoria (in codigo int)
 BEGIN
@@ -103,6 +107,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+drop procedure if exists delete_categoria;
 DELIMITER $$
 CREATE PROCEDURE delete_categoria (in codigo int)
 BEGIN
@@ -112,6 +117,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+drop procedure if exists update_categoria;
 DELIMITER $$
 CREATE PROCEDURE update_categoria (in codigo int,in nuevo_nombre varchar(50))
 BEGIN
@@ -123,3 +129,14 @@ BEGIN
 END $$
 DELIMITER ;
 
+call insert_categoria('Accion');
+insert into pelicula(titulo,fecha_lanzamiento,categoria) values ('James Bond 007',now(),1);
+insert into pelicula(titulo,fecha_lanzamiento,categoria) values ('Venom',now(),1);
+
+
+select * from pelicula;
+
+call insert_categoria("Ficcion");
+call insert_categoria("Romance");
+
+call select_all_categorias();
