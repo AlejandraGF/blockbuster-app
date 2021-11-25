@@ -331,3 +331,10 @@ DELIMITER ;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2021-11-25 11:08:05
+
+drop user if exits 'blockbusterappuser@localhost';
+create user if not exists 'blockbusterappuser@localhost' identified by 'blockbusterapppass';
+grant select,insert,delete,update,execute on blockbuster.* to 'blockbusterappuser@localhost';
+
+SET autocommit = OFF;
+
