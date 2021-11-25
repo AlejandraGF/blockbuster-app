@@ -332,9 +332,9 @@ DELIMITER ;
 
 -- Dump completed on 2021-11-25 11:08:05
 
-drop user if exists 'blockbusterappuser@localhost';
-create user if not exists 'blockbusterappuser@localhost' identified by 'blockbusterapppass';
-grant select,insert,delete,update,execute on blockbuster.* to 'blockbusterappuser@localhost';
+drop user if exists 'blockbusterappuser'@'localhost';
+create user if not exists 'blockbusterappuser'@'localhost' identified by 'blockbusterapppass';
+grant select,insert,delete,update,execute on blockbuster.* to 'blockbusterappuser'@'localhost';
 
 SET autocommit = OFF;
 
