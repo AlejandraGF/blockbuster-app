@@ -1,10 +1,8 @@
 # blockbuster-app
 
-###### PROYECTO #2 - BASES DE DATOS
-
-###### ALUMNA : ALEJANDRA GONZÁLEZ FERNÁNDEZ
-
-###### CARNÉ : 2020035049
+###### Bases de Datos - Alejandra González
+###### Este proyecto consiste en una base de datos para un sistema de rentas de pelicula, las funciones de CRUD de las tablas son manejadas desde Java utilizando procedimientos almacenados y transacciones en JDBC. Se agregan registros de prueba para ver el funcionamiento de la BD.
+Los archivos que manenjan la base de datos fueron escrito en Java y están gestionados por la herramienta de gestión de proyectos de software Maven ######
 
 ## Registros de prueba
 
