@@ -1,9 +1,8 @@
 # blockbuster-app
 
 ###### Bases de Datos - Alejandra González
-###### Este proyecto consiste en una base de datos para un sistema de rentas de pelicula, las funciones de CRUD de las tablas son manejadas desde Java utilizando procedimientos almacenados y transacciones en JDBC. Se agregan registros de prueba para ver el funcionamiento de la BD.
-Los archivos que manenjan la base de datos fueron escrito en Java y están gestionados por la herramienta de gestión de proyectos de software Maven ######
-
+Este proyecto consiste en una base de datos para un sistema de rentas de película, las funciones de CRUD de las tablas son manejadas desde Java utilizando procedimientos almacenados y transacciones en JDBC. Estos archivos que manejan las operaciones de la base de datos desde Java están gestionados por la herramienta de gestión de proyectos de software Maven. 
+Se agregaron registros de prueba para poder apreciar el funcionamiento de la BD.
 ## Registros de prueba
 
 Se hace el insert de registros para realizar las pruebas.
